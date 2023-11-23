@@ -1,15 +1,16 @@
 TECHNICAL TEST
 Irfan Jumadin Siregar
+## Reservation for a Consultation
 ## Project Structure or Design Pattern:
 The current code follows a modular structure, separating different components into distinct sections. Here's a brief overview:
 
-## Main File (main.py or app.py):
+## Main File (main.py):
 
 - Contains the FastAPI application instance (application).
 - Defines Pydantic models for data validation.
 - Sets up MongoDB connection using pymongo.
 
-## Models (e.g., Patients, JadwalKlinik, Reservasi):
+## Models (Patients, JadwalKlinik, Reservasi):
 
 - Pydantic models for data validation and serialization/deserialization.
 - Enum classes for predefined values like Gender and StatusReservasi.
@@ -22,7 +23,7 @@ The current code follows a modular structure, separating different components in
 
 - Configuration class for handling JSON encoding of ObjectId.
 
-## Endpoints (/patients, /jadwal_klinik, /reservasi, etc.):
+## Endpoints (/patients, /jadwal_klinik, /reservasi):
 
 - CRUD operations for patients, clinic schedules, and reservations.
 - Additional endpoints (get_patient_reservations, get_schedule_reservations_by_id) for specific functionalities.
@@ -34,10 +35,10 @@ The current code follows a modular structure, separating different components in
 
 ## Short Manual to Run the Application:
 - Install Dependencies:
-"pip install fastapi pymongo uvicorn"
+- "pip install fastapi pymongo uvicorn"
 
 ## Run the FastAPI Application:
-"python - m uvicorn main:application --reload"
+- "python -m uvicorn main:application --reload"
 - This assumes your main file is named main.py or app.py. Adjust the command accordingly.
 
 ## Access the API Documentation:

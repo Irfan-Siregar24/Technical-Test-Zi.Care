@@ -98,8 +98,7 @@ def create_patients(input_patients: InputPatients):
     inserted_id = str(result.inserted_id)
     return {"id": inserted_id, **patients_data}
 
-from bson import ObjectId
-
+# Pasien
 @application.get("/patients")
 def get_patients(sort_number: Optional[int] = None):
     if sort_number is not None:
@@ -135,7 +134,7 @@ def delete_patient_by_sort_number(sort_number: int):
     else:
         raise HTTPException(status_code=404, detail="Patient not found")
 
-#
+# Jadwal Klinik
 # Create Jadwal Klinik
 @application.post("/jadwal_klinik", response_model=JadwalKlinikInDB)
 def create_jadwal_klinik(jadwal_klinik: JadwalKlinik):
@@ -183,7 +182,7 @@ def delete_jadwal_klinik(jadwal_id: str):
     else:
         raise HTTPException(status_code=404, detail="Jadwal Klinik not found")
 
-
+# Reservasi
 # Create Reservasi
 @application.post("/reservasi", response_model=ReservasiInDB)
 def create_reservasi(reservasi: Reservasi):
